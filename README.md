@@ -80,9 +80,10 @@ This project maintains a high standard of test coverage.
 
 *   **To run unit tests:**
     ```sh
+    ```
     dotnet test
     ```
-
+```
 ### **6. Contributing**
 
 Please see `CONTRIBUTING.md` for our branching strategy and code contribution guidelines.

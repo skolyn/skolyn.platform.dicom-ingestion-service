@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://media.licdn.com/dms/image/v2/D4D0BAQFeCGt8UPcXNw/img-crop_100/B4DZb7vgcPGwAM-/0/1747980258542?e=1757548800&v=beta&t=pE_RAI5RYntm1cShSCllYMsM8mYGBMTgOdULESyr_nE" alt="Skolyn Logo" width="150"/>
+  <img src="https://media.licdn.com/dms/image/v2/D4D3DAQEQQJZnSoRFuQ/image-scale_191_1128/B4DZfZQl3AHMAg-/0/1751696696888/skolyn_cover?e=1752411600&v=beta&t=MTs1JS_LJaxC4n2vTehGPQnorjJXDtwio-2i3yJTxag" alt="Skolyn Logo" width="150"/>
 </p>
 
 # Skolyn DICOM Ingestion Service

@@ -1,44 +1,34 @@
-# .NET / C#
+# Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Jetbrains
+.idea/
+
+# Visual Studio
+.vs/
 *.suo
 *.user
-*.userosscache
-*.sln.docstates
 
 # Build results
 [Bb]in/
 [Oo]bj/
-[Rr]elease/
-[Dd]ebug/
-build/
-build_output/
 
-# IDE files
-.vs/
-.vscode/
-
-# Rider files
-.idea/
+# Rider
+*.sln.DotSettings.user
 
 # User-specific files
-*.rsuser
-*.dbmdl
-*.Publish.xml
-
-# Secrets and environment variables
-*.env
+*.secrets.json
 appsettings.Development.json
 
-# Test results
-TestResults/
+# Build files
+*.log
+*.tlog
 *.trx
-*.coverlet.json
 
-# Rider / Resharper
-_ReSharper.*/
-*.[Rr]esharper
-
-# Mac / OS X
-.DS_Store
-
-# Docker
-docker-compose.override.yml
+# etc.

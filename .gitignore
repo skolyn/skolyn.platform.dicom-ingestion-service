@@ -1,0 +1,44 @@
+# .NET / C#
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Rr]elease/
+[Dd]ebug/
+build/
+build_output/
+
+# IDE files
+.vs/
+.vscode/
+
+# Rider files
+.idea/
+
+# User-specific files
+*.rsuser
+*.dbmdl
+*.Publish.xml
+
+# Secrets and environment variables
+*.env
+appsettings.Development.json
+
+# Test results
+TestResults/
+*.trx
+*.coverlet.json
+
+# Rider / Resharper
+_ReSharper.*/
+*.[Rr]esharper
+
+# Mac / OS X
+.DS_Store
+
+# Docker
+docker-compose.override.yml

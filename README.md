@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="[[URL_to_Skolyn_Logo_High_Res.png]([https://media.licdn.com/dms/image/v2/D4D0BAQFeCGt8UPcXNw/img-crop_100/B4DZb7vgcPGwAM-/0/1747980258542?e=1757548800&v=beta&t=pE_RAI5RYntm1cShSCllYMsM8mYGBMTgOdULESyr_nE](https://media.licdn.com/dms/image/v2/D4D0BAQFeCGt8UPcXNw/img-crop_100/B4DZb7vgcPGwAM-/0/1747980258542?e=1757548800&v=beta&t=pE_RAI5RYntm1cShSCllYMsM8mYGBMTgOdULESyr_nE))]" alt="Skolyn Logo" width="100"/>
+  <img src="[[[URL_to_Skolyn_Logo_High_Res.png]([https://media.licdn.com/dms/image/v2/D4D0BAQFeCGt8UPcXNw/img-crop_100/B4DZb7vgcPGwAM-/0/1747980258542?e=1757548800&v=beta&t=pE_RAI5RYntm1cShSCllYMsM8mYGBMTgOdULESyr_nE](https://media.licdn.com/dms/image/v2/D4D0BAQFeCGt8UPcXNw/img-crop_100/B4DZb7vgcPGwAM-/0/1747980258542?e=1757548800&v=beta&t=pE_RAI5RYntm1cShSCllYMsM8mYGBMTgOdULESyr_nE))]](https://media.licdn.com/dms/image/v2/D4D0BAQFeCGt8UPcXNw/img-crop_100/B4DZb7vgcPGwAM-/0/1747980258542?e=1757548800&v=beta&t=pE_RAI5RYntm1cShSCllYMsM8mYGBMTgOdULESyr_nE)" alt="Skolyn Logo" width="100"/>
 </p>
 
 # Skolyn DICOM Ingestion Service

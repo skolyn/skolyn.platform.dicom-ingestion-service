@@ -6,7 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skolyn.Platform.DicomIngest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skolyn.Platform.DicomIngestion.Application", "src\Skolyn.Platform.DicomIngestion.Application\Skolyn.Platform.DicomIngestion.Application.csproj", "{C7B96738-CE3F-4D3A-B60E-568B32D4B373}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skolyn.Platform.DicomIngestion.Infrastructure", "Skolyn.Platform.DicomIngestion.Infrastructure\Skolyn.Platform.DicomIngestion.Infrastructure.csproj", "{A2195E9C-995B-444D-A1B6-6AE7544798BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skolyn.Platform.DicomIngestion.Infrastructure", "src\Skolyn.Platform.DicomIngestion.Infrastructure\Skolyn.Platform.DicomIngestion.Infrastructure.csproj", "{A2195E9C-995B-444D-A1B6-6AE7544798BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

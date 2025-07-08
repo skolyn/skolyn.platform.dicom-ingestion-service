@@ -19,6 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Skolyn.Platform.DicomIngestion.Infrastructure\Skolyn.Platform.DicomIngestion.Infrastructure.csproj" />
     <ProjectReference Include="..\Skolyn.Platform.DicomIngestion.Application\Skolyn.Platform.DicomIngestion.Application.csproj" />
+    <ProjectReference Include="..\Skolyn.Platform.DicomIngestion.Infrastructure\Skolyn.Platform.DicomIngestion.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -4,9 +4,9 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skolyn.Platform.DicomIngestion.Api", "src\Skolyn.Platform.DicomIngestion.Api\Skolyn.Platform.DicomIngestion.Api.csproj", "{A1B2C3D4-E5F6-7890-ABCD-1234567890AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skolyn.Platform.DicomIngestion.Application", "src\Skolyn.Platform.DicomIngestion.Application\Skolyn.Platform.DicomIngestion.Application.csproj", "{B2C3D4E5-F6G7-8901-BCDE-2345678901BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skolyn.Platform.DicomIngestion.Application", "src\Skolyn.Platform.DicomIngestion.Application\Skolyn.Platform.DicomIngestion.Application.csproj", "{C7B96738-CE3F-4D3A-B60E-568B32D4B373}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skolyn.Platform.DicomIngestion.Infrastructure", "src\Skolyn.Platform.DicomIngestion.Infrastructure\Skolyn.Platform.DicomIngestion.Infrastructure.csproj", "{C3D4E5F6-G7H8-9012-CDEF-3456789012CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skolyn.Platform.DicomIngestion.Infrastructure", "Skolyn.Platform.DicomIngestion.Infrastructure\Skolyn.Platform.DicomIngestion.Infrastructure.csproj", "{A2195E9C-995B-444D-A1B6-6AE7544798BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,13 +18,19 @@ Global
 		{A1B2C3D4-E5F6-7890-ABCD-1234567890AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1B2C3D4-E5F6-7890-ABCD-1234567890AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1B2C3D4-E5F6-7890-ABCD-1234567890AB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B2C3D4E5-F6G7-8901-BCDE-2345678901BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B2C3D4E5-F6G7-8901-BCDE-2345678901BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B2C3D4E5-F6G7-8901-BCDE-2345678901BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B2C3D4E5-F6G7-8901-BCDE-2345678901BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C3D4E5F6-G7H8-9012-CDEF-3456789012CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C3D4E5F6-G7H8-9012-CDEF-3456789012CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C3D4E5F6-G7H8-9012-CDEF-3456789012CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C3D4E5F6-G7H8-9012-CDEF-3456789012CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7B96738-CE3F-4D3A-B60E-568B32D4B373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7B96738-CE3F-4D3A-B60E-568B32D4B373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7B96738-CE3F-4D3A-B60E-568B32D4B373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7B96738-CE3F-4D3A-B60E-568B32D4B373}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2195E9C-995B-444D-A1B6-6AE7544798BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2195E9C-995B-444D-A1B6-6AE7544798BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2195E9C-995B-444D-A1B6-6AE7544798BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2195E9C-995B-444D-A1B6-6AE7544798BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9BEF4351-A827-42AA-A5EE-9BF3805B0BDA}
 	EndGlobalSection
 EndGlobal

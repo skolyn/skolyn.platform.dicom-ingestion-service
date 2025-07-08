@@ -1,4 +1,5 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Skolyn.Platform.DicomIngestion.Application.Models;
 using Skolyn.Platform.DicomIngestion.Application.Services;
 using System.Net;
 

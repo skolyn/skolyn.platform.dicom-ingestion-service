@@ -1,6 +1,6 @@
+using Microsoft.Extensions.Logging;
 using Skolyn.Platform.DicomIngestion.Application.Interfaces;
 using Skolyn.Platform.DicomIngestion.Application.Models;
-using Microsoft.Extensions.Logging;
 
 namespace Skolyn.Platform.DicomIngestion.Application.Services;
 
@@ -49,3 +49,4 @@ public class DicomIngestionService
         };
     }
 }
+

@@ -1,8 +1,7 @@
-using Skolyn.Platform.DicomIngestion.Application.Interfaces;
 using Skolyn.Platform.DicomIngestion.Application.Services;
-using Skolyn.Platform.DicomIngestion.Infrastructure.Messaging;
-using Skolyn.Platform.DicomIngestion.Infrastructure.Services;
-using Skolyn.Platform.DicomIngestion.Infrastructure.Settings;
+using Skolyn.Platform.DicomIngestion.Application.Interfaces;
+using Skolyn.Platform.DicomIngestion.Api.Models;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,6 +47,7 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI();
 }

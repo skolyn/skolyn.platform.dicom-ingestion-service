@@ -1,7 +1,7 @@
 ﻿using Amazon;
 using Amazon.S3;
 using Amazon.S3.Model;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using Skolyn.Platform.DicomIngestion.Application.Interfaces;
 using System;
 using System.IO;
@@ -12,17 +12,16 @@ public class AwsS3Service : IObjectStorageService
 {
     private readonly IAmazonS3 _s3Client;
     private readonly string _bucketName;
+    private readonly string _serviceUrl;
 
-    public AwsS3Service(IConfiguration config)
+    public AwsS3Service(IOptions<ObjectStorageSettings> options)
     {
-        _bucketName = config["ObjectStorage:BucketName"]
-                      ?? throw new ArgumentNullException("ObjectStorage:BucketName is required.");
+        var config = options.Value ?? throw new ArgumentNullException(nameof(options));
 
-        var accessKey = config["ObjectStorage:AccessKey"] ?? "test";
-        var secretKey = config["ObjectStorage:SecretKey"] ?? "test";
-        var regionName = config["ObjectStorage:Region"] ?? "us-east-1";
-        var serviceUrl = config["ObjectStorage:ServiceUrl"];
-        var region = RegionEndpoint.GetBySystemName(regionName);
+        _bucketName = config.BucketName ?? throw new ArgumentNullException("ObjectStorage:BucketName is required.");
+        _serviceUrl = config.ServiceUrl;
+
+        var region = RegionEndpoint.GetBySystemName(config.Region ?? "us-east-1");
 
         var s3Config = new AmazonS3Config
         {
@@ -30,17 +29,13 @@ public class AwsS3Service : IObjectStorageService
             ForcePathStyle = true
         };
 
-        if (!string.IsNullOrEmpty(serviceUrl))
+        if (!string.IsNullOrEmpty(config.ServiceUrl))
         {
-            s3Config.ServiceURL = serviceUrl;
+            s3Config.ServiceURL = config.ServiceUrl;
         }
 
-        _s3Client = new AmazonS3Client(accessKey, secretKey, s3Config);
-
-      
+        _s3Client = new AmazonS3Client(config.AccessKey ?? "test", config.SecretKey ?? "test", s3Config);
     }
-   
-
 
     public async Task<string> UploadFileAsync(string objectKey, Stream fileStream, CancellationToken cancellationToken)
     {
@@ -49,16 +44,14 @@ public class AwsS3Service : IObjectStorageService
             BucketName = _bucketName,
             Key = objectKey,
             InputStream = fileStream,
-            CannedACL = S3CannedACL.PublicRead // linklə baxmaq istəyirsənsə, bu vacibdir!
+            CannedACL = S3CannedACL.PublicRead
         };
 
         var response = await _s3Client.PutObjectAsync(request, cancellationToken);
 
-        // LocalStack üçün uyğun URL qaytar
-        var baseUrl = _s3Client.Config.ServiceURL ?? $"https://{_bucketName}.s3.amazonaws.com";
+        var baseUrl = _serviceUrl ?? $"https://{_bucketName}.s3.amazonaws.com";
         var url = $"{baseUrl}/{_bucketName}/{objectKey}";
 
         return url;
     }
-
 }

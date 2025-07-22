@@ -1,35 +1,31 @@
-﻿using System.Text.Json;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Options;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Framing;
 using Skolyn.Platform.DicomIngestion.Application.Interfaces;
 using Skolyn.Platform.DicomIngestion.Application.Models;
+using System.Text.Json;
 
 public class RabbitMqService : IMessageQueueService
 {
-    private readonly string _hostName;
-    private readonly string _exchangeName;
-    private readonly string _connectionString;
+    private readonly MessageQueueSettings _settings;
 
-    public RabbitMqService(IConfiguration configuration)
+    public RabbitMqService(IOptions<MessageQueueSettings> options)
     {
-        _hostName = configuration["MessageQueue:HostName"] ?? "localhost";
-        _exchangeName = configuration["MessageQueue:ExchangeName"] ?? "dicom.studies.exchange";
-        _connectionString = configuration["MessageQueue:ConnectionString"]
-            ?? throw new ArgumentNullException("MessageQueue:ConnectionString is missing in configuration.");
+        _settings = options.Value;
+
+        if (string.IsNullOrWhiteSpace(_settings.ConnectionString))
+            throw new ArgumentNullException(nameof(_settings.ConnectionString), "Connection string is missing in configuration.");
     }
 
     public async Task PublishStudyForProcessingAsync(DicomStudyMessage message, CancellationToken cancellationToken)
     {
-        var factory = new ConnectionFactory { Uri = new Uri(_connectionString) };
+        var factory = new ConnectionFactory { Uri = new Uri(_settings.ConnectionString) };
 
         await using var connection = await factory.CreateConnectionAsync(cancellationToken);
-
         await using var channel = await connection.CreateChannelAsync(null, cancellationToken);
 
-        // Use the IChannel interface directly instead of casting to IModel
         await channel.ExchangeDeclareAsync(
-            exchange: _exchangeName,
+            exchange: _settings.ExchangeName,
             type: ExchangeType.Fanout,
             durable: true,
             cancellationToken: cancellationToken
@@ -38,7 +34,7 @@ public class RabbitMqService : IMessageQueueService
         var body = JsonSerializer.SerializeToUtf8Bytes(message);
 
         await channel.BasicPublishAsync(
-            exchange: _exchangeName,
+            exchange: _settings.ExchangeName,
             routingKey: "",
             mandatory: false,
             basicProperties: new BasicProperties(),

@@ -1,6 +1,7 @@
-using Skolyn.Platform.DicomIngestion.Application.Services;
+using Amazon.S3;
 using Skolyn.Platform.DicomIngestion.Application.Interfaces;
-using Skolyn.Platform.DicomIngestion.Api.Models;
+using Skolyn.Platform.DicomIngestion.Application.Services;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -34,9 +35,20 @@ builder.Services.AddAWSService<Amazon.S3.IAmazonS3>();
 // Add Health Checks for Kubernetes probes
 builder.Services.AddHealthChecks()
     .AddRabbitMQ(rabbitConnectionString: builder.Configuration["MessageQueue:ConnectionString"])
-    .AddS3(options => {
-        options.BucketName = builder.Configuration["ObjectStorage:BucketName"];
-    });
+   .AddS3(options =>
+   {
+       options.BucketName = builder.Configuration["ObjectStorage:BucketName"];
+       options.S3Config = new AmazonS3Config
+       {
+           ServiceURL = builder.Configuration["ObjectStorage:ServiceUrl"],
+           UseHttp = true,
+           ForcePathStyle = true  // localstack üçün vacibdir
+       };
+       options.Credentials = new Amazon.Runtime.BasicAWSCredentials(
+           builder.Configuration["ObjectStorage:AccessKey"],
+           builder.Configuration["ObjectStorage:SecretKey"]
+       );
+   });
 
 // 2. Build the Application
 // ---------------------------------------------
